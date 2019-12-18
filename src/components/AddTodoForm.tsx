@@ -19,12 +19,9 @@ class AddTodoForm extends React.Component<AddTodoFormProps> {
     onAddTodo = (e: any) => {
         e.preventDefault();
         let title = e.target.elements[0].value;
-        console.log(title);
         let categoryTitle = e.target.elements[1].value;
-        console.log(categoryTitle);
         let id = uuid();
         if (title && categoryTitle !== 'Select an option') {
-            console.log('The if ran!');
             this.setState(
                 () => {
                     return {
@@ -43,7 +40,6 @@ class AddTodoForm extends React.Component<AddTodoFormProps> {
             !categoryTitle ||
             categoryTitle === 'Select an option'
         ) {
-            console.log(' The else if ran!');
             this.setState(() => {
                 return {
                     error:
