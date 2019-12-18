@@ -13,6 +13,7 @@ export interface Todo {
     id: string;
     title: string;
     categoryTitle?: string;
+    error?: null;
 }
 
 export interface GetCategoriesAction {
