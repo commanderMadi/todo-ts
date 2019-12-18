@@ -10,51 +10,88 @@ interface AddTodoFormProps {
 
 class AddTodoForm extends React.Component<AddTodoFormProps> {
     state: Todo = {
-        id: uuid(),
+        id: 'default-id',
         title: '',
-        categoryTitle: ''
+        categoryTitle: '',
+        error: null
     };
 
-    handleInputChange = (e: any) => {
-        const todoTitle = e.target.value;
+    // handleInputChange = (e: any) => {
+    //     const todoTitle = e.target.value;
+    //     let id = uuid();
 
-        let id = Math.floor(Math.random() * 100);
-        this.setState(() => {
-            return {
-                title: todoTitle,
-                id
-            };
-        });
-    };
-    handleSelectChange = (e: any) => {
-        e.preventDefault();
-        const todoCategoryTitle = e.target.value;
-        this.setState(() => {
-            return {
-                categoryTitle: todoCategoryTitle
-            };
-        });
-    };
+    //     this.setState(() => {
+    //         return {
+    //             title: todoTitle,
+    //             id
+    //         };
+    //     });
+    // };
+    // handleSelectChange = (e: any) => {
+    //     e.preventDefault();
+    //     const todoCategoryTitle = e.target.value;
+    //     this.setState(() => {
+    //         return {
+    //             categoryTitle: todoCategoryTitle
+    //         };
+    //     });
+    // };
 
     onAddTodo = (e: any) => {
-        console.log(this.state);
         e.preventDefault();
-        this.props.addTodo(this.state);
+        let title = e.target.elements[0].value;
+        console.log(title);
+        let categoryTitle = e.target.elements[1].value;
+        console.log(categoryTitle);
+        let id = uuid();
+        if (title && categoryTitle !== 'Select an option') {
+            console.log('The if ran!');
+            this.setState(
+                () => {
+                    return {
+                        title,
+                        categoryTitle,
+                        id,
+                        error: null
+                    };
+                },
+                () => this.props.addTodo(this.state)
+            );
+            e.target.elements[0].value = '';
+            e.target.elements[1].value = 'Select an option';
+        } else if (
+            !title ||
+            !categoryTitle ||
+            categoryTitle === 'Select an option'
+        ) {
+            console.log(' The else if ran!');
+            this.setState(() => {
+                return {
+                    error:
+                        'Please make sure you you have enetered todo title and selected a category'
+                };
+            });
+        }
     };
     render() {
         return (
-            <form onSubmit={this.onAddTodo}>
-                <label>Todo Title:</label>
-                <input type='text' onChange={this.handleInputChange}></input>
-                <label>Todo Category:</label>
-                {/* <select onChange={this.handleSelectChange}>
-                    <option value='null'>Select an option</option>
-                    {this.props.categories.map((category, i: number) => {
-                        return <option key={i}>{category.name}</option>;
-                    })}
-                </select> */}
-                <input type='submit' value='Add Todo' />
-            </form>
+            <div>
+                {this.state.error && (
+                    <p className='error'>{this.state.error}</p>
+                )}
+                <form onSubmit={this.onAddTodo}>
+                    <label>Todo Title:</label>
+                    <input type='text'></input>
+                    <label>Todo Category:</label>
+                    <select>
+                        <option>Select an option</option>
+                        {this.props.categories.map((category, i: number) => {
+                            return <option key={i}>{category.name}</option>;
+                        })}
+                    </select>
+                    <input type='submit' value='Add Todo' />
+                </form>
+            </div>
         );
     }
 }
