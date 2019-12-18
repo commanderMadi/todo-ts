@@ -6,12 +6,11 @@ const url = 'data.json';
 
 export interface Category {
     name: string;
-    id: number;
     todos: Todo[];
 }
 
 export interface Todo {
-    id: number;
+    id: string;
     title: string;
     categoryTitle?: string;
 }
@@ -23,7 +22,7 @@ export interface GetCategoriesAction {
 
 export interface DeleteTodoAction {
     type: ActionTypes.deleteTodo;
-    payload: { id: number };
+    payload: { id: string };
 }
 
 export interface AddTodoAction {
@@ -42,7 +41,7 @@ export const getCategories = () => {
     };
 };
 
-export const deleteTodo = (id: number) => {
+export const deleteTodo = (id: string) => {
     return {
         type: ActionTypes.deleteTodo,
         payload: { id }

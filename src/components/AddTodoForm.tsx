@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Todo, addTodo, Category } from '../actions';
+import uuid from 'uuid';
 
 interface AddTodoFormProps {
     categories: Category[];
@@ -9,7 +10,7 @@ interface AddTodoFormProps {
 
 class AddTodoForm extends React.Component<AddTodoFormProps> {
     state: Todo = {
-        id: 0,
+        id: uuid(),
         title: '',
         categoryTitle: ''
     };
@@ -46,12 +47,12 @@ class AddTodoForm extends React.Component<AddTodoFormProps> {
                 <label>Todo Title:</label>
                 <input type='text' onChange={this.handleInputChange}></input>
                 <label>Todo Category:</label>
-                <select onChange={this.handleSelectChange}>
+                {/* <select onChange={this.handleSelectChange}>
                     <option value='null'>Select an option</option>
                     {this.props.categories.map((category, i: number) => {
                         return <option key={i}>{category.name}</option>;
                     })}
-                </select>
+                </select> */}
                 <input type='submit' value='Add Todo' />
             </form>
         );
