@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Sports",
+        "todos": [
+            {
+                "id": 1,
+                "title": "Play Football"
+            },
+            {
+                "id": 2,
+                "title": "Play Basketball"
+            }
+        ]
+    },
+    {
+        "name": "Work",
+        "todos": [
+            {
+                "id": 3,
+                "title": "Study TS"
+            },
+            {
+                "id": 4,
+                "title": "Work Hard"
+            }
+        ]
+    },
+    {
+        "name": "Meditation",
+        "todos": [
+            {
+                "id": 5,
+                "title": "Read Hyperfocus"
+            },
+            {
+                "id": 6,
+                "title": "Do some Yoga"
+            }
+        ]
+    },
+    {
+        "name": "Leisure",
+        "todos": [
+            {
+                "id": 7,
+                "title": "Reading"
+            },
+            {
+                "id": 8,
+                "title": "Shopping"
+            }
+        ]
+    }
+]
