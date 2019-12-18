@@ -16,27 +16,6 @@ class AddTodoForm extends React.Component<AddTodoFormProps> {
         error: null
     };
 
-    // handleInputChange = (e: any) => {
-    //     const todoTitle = e.target.value;
-    //     let id = uuid();
-
-    //     this.setState(() => {
-    //         return {
-    //             title: todoTitle,
-    //             id
-    //         };
-    //     });
-    // };
-    // handleSelectChange = (e: any) => {
-    //     e.preventDefault();
-    //     const todoCategoryTitle = e.target.value;
-    //     this.setState(() => {
-    //         return {
-    //             categoryTitle: todoCategoryTitle
-    //         };
-    //     });
-    // };
-
     onAddTodo = (e: any) => {
         e.preventDefault();
         let title = e.target.elements[0].value;
