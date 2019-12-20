@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import { Category } from '../actions';
+import { Category, Auth } from '../actions';
 import { Action, ActionTypes } from '../actions/actiontypes';
 
 export interface ReduxStoreState {
     categories: Category[];
+    isAuthenticated: Auth;
 }
 
 const categoriesReducer = (state: Category[] = [], action: Action) => {
@@ -38,6 +39,20 @@ const categoriesReducer = (state: Category[] = [], action: Action) => {
     }
 };
 
+const authReducer = (state: Auth = { auth: false }, action: Action) => {
+    switch (action.type) {
+        case ActionTypes.checkAuthentication:
+            if (!state.auth) {
+                return { auth: true };
+            } else {
+                return { auth: false };
+            }
+        default:
+            return state;
+    }
+};
+
 export const reducers = combineReducers<ReduxStoreState>({
-    categories: categoriesReducer
+    categories: categoriesReducer,
+    isAuthenticated: authReducer
 });
