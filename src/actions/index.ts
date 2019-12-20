@@ -16,6 +16,10 @@ export interface Todo {
     error?: null;
 }
 
+export interface Auth {
+    auth: boolean;
+}
+
 export interface GetCategoriesAction {
     type: ActionTypes.getCategories;
     payload: Category[];
@@ -29,6 +33,11 @@ export interface DeleteTodoAction {
 export interface AddTodoAction {
     type: ActionTypes.addTodo;
     payload: Todo;
+}
+
+export interface AuthenticationAction {
+    type: ActionTypes.checkAuthentication;
+    payload: Auth;
 }
 
 export const getCategories = () => {
@@ -53,5 +62,12 @@ export const addTodo = (newTodo: Todo): AddTodoAction => {
     return {
         type: ActionTypes.addTodo,
         payload: newTodo
+    };
+};
+
+export const checkAuthentication = (auth: Auth): AuthenticationAction => {
+    return {
+        type: ActionTypes.checkAuthentication,
+        payload: auth
     };
 };
