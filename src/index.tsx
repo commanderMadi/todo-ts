@@ -6,29 +6,11 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import thunk from 'redux-thunk';
 import { reducers } from './reducers/';
-
-/** Presisting Redux State in localstorage **/
-
-const loadState = () => {
-    try {
-        const state = localStorage.getItem('state');
-        if (state === null) {
-            return undefined;
-        }
-        return JSON.parse(state);
-    } catch (err) {
-        return undefined;
-    }
-};
-
-const saveState = (state: {}) => {
-    try {
-        const data = JSON.stringify(state);
-        localStorage.setItem('state', data);
-    } catch (err) {}
-};
+import { saveState, loadState } from './localStorage';
 
 const persistedState = loadState();
+
+console.log(persistedState);
 
 const store = createStore(
     reducers,
