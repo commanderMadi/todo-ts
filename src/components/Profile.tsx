@@ -1,9 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const Profile = () => {
+class Profile extends React.Component {
+  render() {
     return (
-        <div>
-            <h1>Profile Component</h1>
-        </div>
+      <div>
+        <p>Welcome, Admin</p>
+        <Link to='/tasks'>Go to the Tasks page</Link>
+      </div>
     );
-};
+  }
+}
+
+export { Profile };
