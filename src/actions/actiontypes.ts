@@ -1,19 +1,19 @@
 import {
-    GetCategoriesAction,
-    DeleteTodoAction,
-    AddTodoAction,
-    AuthenticationAction
+  GetCategoriesAction,
+  DeleteTaskAction,
+  AddTaskAction,
+  AuthenticationAction
 } from '../actions';
 
 export enum ActionTypes {
-    getCategories,
-    deleteTodo,
-    addTodo,
-    checkAuthentication
+  getCategories,
+  deleteTask,
+  addTask,
+  checkAuthentication
 }
 
 export type Action =
-    | GetCategoriesAction
-    | DeleteTodoAction
-    | AddTodoAction
-    | AuthenticationAction;
+  | GetCategoriesAction
+  | DeleteTaskAction
+  | AddTaskAction
+  | AuthenticationAction;
