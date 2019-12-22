@@ -41,14 +41,33 @@ export class Login extends React.Component<LoginProps> {
     };
 
     render() {
-        console.log(this.props.isAuthenticated);
         return (
             <div>
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onFormSubmit}>
-                    <input type='text' />
-                    <input type='password' />
-                    <input type='submit' />
+                    <div className='form-group'>
+                        <label htmlFor='user'>Username</label>
+                        <input
+                            type='text'
+                            className='form-control'
+                            id='usernameinput'
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='pass'>Password</label>
+                        <input
+                            type='password'
+                            className='form-control'
+                            id='passwordinput'
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <input
+                            value='Log In'
+                            type='submit'
+                            className='btn btn-primary'
+                        />
+                    </div>
                 </form>
             </div>
         );

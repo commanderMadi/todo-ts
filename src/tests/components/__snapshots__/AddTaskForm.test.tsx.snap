@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTaskForm should render correctly 1`] = `
+<div>
+  <form
+    className="add_task_form"
+    onSubmit={[Function]}
+  >
+    <label>
+      Task Title:
+    </label>
+    <input
+      type="text"
+    />
+    <label>
+      Task Category:
+    </label>
+    <select>
+      <option>
+        Select an option
+      </option>
+      <option
+        key="0"
+      >
+        Sports
+      </option>
+      <option
+        key="1"
+      >
+        Work
+      </option>
+    </select>
+    <input
+      type="submit"
+      value="Add Task"
+    />
+  </form>
+</div>
+`;

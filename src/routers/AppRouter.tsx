@@ -5,20 +5,13 @@ import Header from '../components/Header';
 import Tasks from '../components/Tasks';
 import { Profile } from '../components/Profile';
 import Login from '../components/Login';
-import { ReduxStoreState } from '../reducers';
-import { Auth } from '../actions';
-import { connect } from 'react-redux';
 import PrivateRoute from '../routers/PrivateRoute';
 import PublicRoute from './PublicRoute';
 
-interface AppRouterProps {
-    isAuthenticated: Auth;
-}
-
-export const AppRouter = (props: AppRouterProps) => {
+export const AppRouter = () => {
     return (
         <BrowserRouter>
-            <div>
+            <div className='container'>
                 <Header />
                 <Switch>
                     <Route path='/' exact component={App} />
@@ -30,11 +23,3 @@ export const AppRouter = (props: AppRouterProps) => {
         </BrowserRouter>
     );
 };
-
-const mapStateToProps = (state: ReduxStoreState) => {
-    return {
-        isAuthenticated: state.isAuthenticated
-    };
-};
-
-export default connect(mapStateToProps)(AppRouter);

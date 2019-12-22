@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should load correctly 1`] = `
+<div>
+  <h1>
+    Welcome to the app!
+  </h1>
+</div>
+`;

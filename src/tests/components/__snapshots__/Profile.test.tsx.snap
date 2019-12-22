@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component should load correctly 1`] = `
+<div>
+  <p>
+    Welcome, Admin
+  </p>
+  <Link
+    to="/tasks"
+  >
+    Go to the Tasks page
+  </Link>
+</div>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should load a login link when user is not logged in 1`] = `
+<nav
+  className="nav"
+>
+  <NavLink
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    to="/tasks"
+  >
+    Tasks
+  </NavLink>
+  <NavLink
+    to="/profile"
+  >
+    Profile
+  </NavLink>
+  <NavLink
+    to="/login"
+  >
+    Login
+  </NavLink>
+</nav>
+`;
+
+exports[`Header component should show a logout button when user is logged in 1`] = `
+<nav
+  className="nav"
+>
+  <NavLink
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    to="/tasks"
+  >
+    Tasks
+  </NavLink>
+  <NavLink
+    to="/profile"
+  >
+    Profile
+  </NavLink>
+  <button
+    className="logout_button"
+    onClick={[Function]}
+  >
+    Logout Now
+  </button>
+</nav>
+`;

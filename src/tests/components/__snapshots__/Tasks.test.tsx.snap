@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tasks component should load with all default data 1`] = `
+<div>
+  <h1>
+    Tasks Component
+  </h1>
+  <AddTaskForm
+    categories={
+      Array [
+        Object {
+          "name": "Sports",
+          "tasks": Array [
+            Object {
+              "id": "042ffd34-d989-321c-ad06-f60826172424",
+              "title": "Play Hockey",
+            },
+          ],
+        },
+        Object {
+          "name": "Work",
+          "tasks": Array [
+            Object {
+              "id": "109156be-c4fb-41ea-b1b4-efe1671c5836",
+              "title": "Deliver Article",
+            },
+          ],
+        },
+      ]
+    }
+    onSubmit={[Function]}
+  />
+  <div
+    key="0"
+  >
+    <h2>
+      Sports
+    </h2>
+    <div
+      key="042ffd34-d989-321c-ad06-f60826172424"
+    >
+      <h4>
+        Play Hockey
+      </h4>
+      <button
+        className="task_remove"
+        onClick={[Function]}
+      >
+        Remove Task
+      </button>
+    </div>
+  </div>
+  <div
+    key="1"
+  >
+    <h2>
+      Work
+    </h2>
+    <div
+      key="109156be-c4fb-41ea-b1b4-efe1671c5836"
+    >
+      <h4>
+        Deliver Article
+      </h4>
+      <button
+        className="task_remove"
+        onClick={[Function]}
+      >
+        Remove Task
+      </button>
+    </div>
+  </div>
+</div>
+`;

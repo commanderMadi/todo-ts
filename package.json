@@ -23,6 +23,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
+    "materialize-css": "^1.0.0-rc.2",
     "raf": "^3.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
