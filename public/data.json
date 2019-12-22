@@ -1,8 +1,6 @@
-[
-    {
+[{
         "name": "Sports",
-        "todos": [
-            {
+        "tasks": [{
                 "id": "2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d",
                 "title": "Play Football"
             },
@@ -14,8 +12,7 @@
     },
     {
         "name": "Work",
-        "todos": [
-            {
+        "tasks": [{
                 "id": "c6235813-3ba4-3801-ae84-e0a6ebb7d138",
                 "title": "Study TS"
             },
