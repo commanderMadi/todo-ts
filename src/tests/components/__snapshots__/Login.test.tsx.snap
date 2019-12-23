@@ -5,15 +5,43 @@ exports[`should render Login component correctly 1`] = `
   <form
     onSubmit={[Function]}
   >
-    <input
-      type="text"
-    />
-    <input
-      type="password"
-    />
-    <input
-      type="submit"
-    />
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="user"
+      >
+        Username
+      </label>
+      <input
+        className="form-control"
+        id="usernameinput"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pass"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        id="passwordinput"
+        type="password"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-primary"
+        type="submit"
+        value="Log In"
+      />
+    </div>
   </form>
 </div>
 `;

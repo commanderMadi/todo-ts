@@ -2,9 +2,6 @@
 
 exports[`Tasks component should load with all default data 1`] = `
 <div>
-  <h1>
-    Tasks Component
-  </h1>
   <AddTaskForm
     categories={
       Array [
@@ -31,43 +28,62 @@ exports[`Tasks component should load with all default data 1`] = `
     onSubmit={[Function]}
   />
   <div
-    key="0"
+    className="row mt-5"
   >
-    <h2>
-      Sports
-    </h2>
     <div
-      key="042ffd34-d989-321c-ad06-f60826172424"
+      className="col-12 mb-4"
     >
-      <h4>
-        Play Hockey
-      </h4>
-      <button
-        className="task_remove"
-        onClick={[Function]}
-      >
-        Remove Task
-      </button>
+      <h2>
+        Tasks Categories
+      </h2>
     </div>
-  </div>
-  <div
-    key="1"
-  >
-    <h2>
-      Work
-    </h2>
     <div
-      key="109156be-c4fb-41ea-b1b4-efe1671c5836"
+      className="col-md-6"
+      key="0"
     >
-      <h4>
-        Deliver Article
-      </h4>
-      <button
-        className="task_remove"
-        onClick={[Function]}
+      <h3>
+        Sports
+      </h3>
+      <div
+        className="mb-3"
+        key="042ffd34-d989-321c-ad06-f60826172424"
       >
-        Remove Task
-      </button>
+        <span
+          className="pr-4"
+        >
+          Play Hockey
+        </span>
+        <button
+          className="task_remove btn btn-sm btn-danger"
+          onClick={[Function]}
+        >
+          Remove Task
+        </button>
+      </div>
+    </div>
+    <div
+      className="col-md-6"
+      key="1"
+    >
+      <h3>
+        Work
+      </h3>
+      <div
+        className="mb-3"
+        key="109156be-c4fb-41ea-b1b4-efe1671c5836"
+      >
+        <span
+          className="pr-4"
+        >
+          Deliver Article
+        </span>
+        <button
+          className="task_remove btn btn-sm btn-danger"
+          onClick={[Function]}
+        >
+          Remove Task
+        </button>
+      </div>
     </div>
   </div>
 </div>

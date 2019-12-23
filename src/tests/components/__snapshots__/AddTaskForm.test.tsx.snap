@@ -2,35 +2,53 @@
 
 exports[`AddTaskForm should render correctly 1`] = `
 <div>
+  <h4
+    className="mt-2"
+  >
+    Add a New Task
+  </h4>
   <form
-    className="add_task_form"
+    className="mt-4"
     onSubmit={[Function]}
   >
-    <label>
-      Task Title:
-    </label>
-    <input
-      type="text"
-    />
-    <label>
-      Task Category:
-    </label>
-    <select>
-      <option>
-        Select an option
-      </option>
-      <option
-        key="0"
+    <div
+      className="form-row"
+    >
+      <div
+        className="form-group col-md-6"
       >
-        Sports
-      </option>
-      <option
-        key="1"
+        <input
+          className="form-control"
+          id="task_title"
+          placeholder="Enter task title..."
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group col-md-6"
       >
-        Work
-      </option>
-    </select>
+        <select
+          className="form-control"
+          id="formcontrolselect"
+        >
+          <option>
+            Select an option
+          </option>
+          <option
+            key="0"
+          >
+            Sports
+          </option>
+          <option
+            key="1"
+          >
+            Work
+          </option>
+        </select>
+      </div>
+    </div>
     <input
+      className="btn btn-primary"
       type="submit"
       value="Add Task"
     />

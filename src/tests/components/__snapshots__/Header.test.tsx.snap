@@ -1,56 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component should load a login link when user is not logged in 1`] = `
-<nav
-  className="nav"
+<div
+  className="row"
 >
-  <NavLink
-    to="/"
+  <div
+    className="col-sm"
   >
-    Home
-  </NavLink>
-  <NavLink
-    to="/tasks"
-  >
-    Tasks
-  </NavLink>
-  <NavLink
-    to="/profile"
-  >
-    Profile
-  </NavLink>
-  <NavLink
-    to="/login"
-  >
-    Login
-  </NavLink>
-</nav>
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light"
+    >
+      <Link
+        className="navbar-brand"
+        to="/"
+      >
+        Tasks App
+      </Link>
+      <button
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-target="#navbarNav"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarNav"
+      >
+        <ul
+          className="navbar-nav"
+          id="nav-mobile"
+        >
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/tasks"
+            >
+              Tasks
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link text-success"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
 `;
 
 exports[`Header component should show a logout button when user is logged in 1`] = `
-<nav
-  className="nav"
+<div
+  className="row"
 >
-  <NavLink
-    to="/"
+  <div
+    className="col-sm"
   >
-    Home
-  </NavLink>
-  <NavLink
-    to="/tasks"
-  >
-    Tasks
-  </NavLink>
-  <NavLink
-    to="/profile"
-  >
-    Profile
-  </NavLink>
-  <button
-    className="logout_button"
-    onClick={[Function]}
-  >
-    Logout Now
-  </button>
-</nav>
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light"
+    >
+      <Link
+        className="navbar-brand"
+        to="/"
+      >
+        Tasks App
+      </Link>
+      <button
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-target="#navbarNav"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarNav"
+      >
+        <ul
+          className="navbar-nav"
+          id="nav-mobile"
+        >
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/tasks"
+            >
+              Tasks
+            </NavLink>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <NavLink
+              className="nav-link"
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+          </li>
+        </ul>
+        <button
+          className="btn btn-sm btn-danger ml-auto"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
 `;
