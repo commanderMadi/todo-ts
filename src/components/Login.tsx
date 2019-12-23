@@ -8,8 +8,18 @@ interface LoginProps {
   checkAuthentication: typeof checkAuthentication;
 }
 
-export class Login extends React.Component<LoginProps> {
-  state = { username: 'Admin', password: '54321', error: null };
+interface LoginState {
+  username: string;
+  password: string;
+  error: null | string;
+}
+
+export class Login extends React.Component<LoginProps, LoginState> {
+  constructor(props: LoginProps) {
+    super(props);
+    this.state = { username: 'Admin', password: '54321', error: null };
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
 
   componentDidMount() {
     const loginData = JSON.stringify(this.state);
@@ -31,11 +41,11 @@ export class Login extends React.Component<LoginProps> {
     }
   }
 
-  onFormSubmit = (e: any) => {
+  onFormSubmit(e: any) {
     e.preventDefault();
     const [username, password] = e.target.elements;
     this.checkCredentials(username.value, password.value);
-  };
+  }
 
   render() {
     return (
