@@ -5,8 +5,7 @@ import Header from '../components/Header';
 import Tasks from '../components/Tasks';
 import { Profile } from '../components/Profile';
 import Login from '../components/Login';
-import PrivateRoute from '../routers/PrivateRoute';
-import PublicRoute from './PublicRoute';
+import { requireAuth, publicRoute } from '../components/Auth';
 
 export const AppRouter = () => {
     return (
@@ -15,9 +14,9 @@ export const AppRouter = () => {
                 <Header />
                 <Switch>
                     <Route path='/' exact component={App} />
-                    <PrivateRoute path='/tasks' component={Tasks} />
-                    <PrivateRoute path='/profile' component={Profile} />
-                    <PublicRoute path='/login' component={Login} />
+                    <Route path='/tasks' component={requireAuth(Tasks)} />
+                    <Route path='/profile' component={requireAuth(Profile)} />
+                    <Route path='/login' component={publicRoute(Login)} />
                 </Switch>
             </div>
         </BrowserRouter>
