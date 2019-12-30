@@ -5,39 +5,43 @@ import { Auth } from '../actions';
 import { ReduxStoreState } from '../reducers';
 
 interface AuthenticateProps {
-    isAuthenticated: Auth;
+  isAuthenticated: Auth;
 }
 
 export const requireAuth = (CurrentComponent: React.ComponentType<any>) => {
-    class Authenticate extends React.Component<AuthenticateProps> {
-        render() {
-            return !this.props.isAuthenticated.auth ? (
-                <Redirect to='/login' />
-            ) : (
-                <CurrentComponent {...this.props} />
-            );
-        }
+  class Authenticate extends React.Component<AuthenticateProps> {
+    render() {
+      const { isAuthenticated } = this.props;
+      const { auth } = isAuthenticated;
+      return !auth ? (
+        <Redirect to='/login' />
+      ) : (
+        <CurrentComponent {...this.props} />
+      );
     }
+  }
 
-    const mapStateToProps = (state: ReduxStoreState) => ({
-        isAuthenticated: state.isAuthenticated
-    });
-    return connect(mapStateToProps)(Authenticate);
+  const mapStateToProps = (state: ReduxStoreState) => ({
+    isAuthenticated: state.isAuthenticated
+  });
+  return connect(mapStateToProps)(Authenticate);
 };
 
 export const publicRoute = (CurrentComponent: React.ComponentType<any>) => {
-    class PublicRoute extends React.Component<AuthenticateProps> {
-        render() {
-            return !this.props.isAuthenticated.auth ? (
-                <CurrentComponent {...this.props} />
-            ) : (
-                <Redirect to='/profile' />
-            );
-        }
+  class PublicRoute extends React.Component<AuthenticateProps> {
+    render() {
+      const { isAuthenticated } = this.props;
+      const { auth } = isAuthenticated;
+      return !auth ? (
+        <CurrentComponent {...this.props} />
+      ) : (
+        <Redirect to='/profile' />
+      );
     }
+  }
 
-    const mapStateToProps = (state: ReduxStoreState) => ({
-        isAuthenticated: state.isAuthenticated
-    });
-    return connect(mapStateToProps)(PublicRoute);
+  const mapStateToProps = (state: ReduxStoreState) => ({
+    isAuthenticated: state.isAuthenticated
+  });
+  return connect(mapStateToProps)(PublicRoute);
 };
