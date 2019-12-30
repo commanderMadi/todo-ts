@@ -36,22 +36,24 @@ export class Tasks extends React.Component<TasksProps> {
   renderCategories() {
     return (
       this.props.categories &&
-      this.props.categories.map((category: Category, index: number) => {
+      this.props.categories.map((category: Category) => {
         return (
-          <TasksContainer className='col-md-6' key={index}>
+          <TasksContainer id={category.name} key={category.name}>
             <CategoryTitle>{category.name}</CategoryTitle>
 
             {category.tasks.map((task: Task) => {
               return (
-                <div className='mb-3' key={task.id}>
-                  <TaskTitle className='pr-4'>{task.title}</TaskTitle>
-                  <Button
-                    className='task_remove btn btn-sm btn-danger'
-                    onClick={() => this.onDelete(task.id)}
-                  >
-                    <FontAwesomeIcon icon={faTrash} />
-                  </Button>
-                </div>
+                category && (
+                  <div key={task.id}>
+                    <TaskTitle className='pr-4'>{task.title}</TaskTitle>
+                    <Button
+                      className='task_remove'
+                      onClick={() => this.onDelete(task.id)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} />
+                    </Button>
+                  </div>
+                )
               );
             })}
           </TasksContainer>
@@ -66,7 +68,7 @@ export class Tasks extends React.Component<TasksProps> {
           onSubmit={this.onSubmit}
           categories={this.props.categories}
         />
-        <Container className='row mt-5'>
+        <Container>
           <FullWidthH2>Tasks Categories</FullWidthH2>
           {this.props.categories.length > 0 ? (
             this.renderCategories()
