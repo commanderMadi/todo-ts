@@ -1,6 +1,8 @@
 import React from 'react';
 import { Task, Category } from '../actions';
 import uuid from 'uuid';
+import { FormContainer, Form } from './styles/forms';
+import { Button } from '../components/styles/base';
 
 interface AddTaskFormProps {
   categories: Category[];
@@ -54,33 +56,29 @@ export class AddTaskForm extends React.Component<AddTaskFormProps> {
   }
   render() {
     return (
-      <div>
+      <FormContainer>
         {this.state.error && (
           <p className='col-md-12 text-danger mt-4'>{this.state.error}</p>
         )}
         <h4 className='mt-2'>Add a New Task</h4>
-        <form className='mt-4' onSubmit={this.onSubmit}>
-          <div className='form-row'>
-            <div className='form-group col-md-6'>
-              <input
-                className='form-control'
-                id='task_title'
-                placeholder='Enter task title...'
-                type='text'
-              />
-            </div>
-            <div className='form-group col-md-6'>
-              <select id='formcontrolselect' className='form-control'>
-                <option>Select an option</option>
-                {this.props.categories.map((category, i: number) => {
-                  return <option key={i}>{category.name}</option>;
-                })}
-              </select>
-            </div>
-          </div>
-          <input className='btn btn-primary' type='submit' value='Add Task' />
-        </form>
-      </div>
+        <Form className='mt-4' onSubmit={this.onSubmit}>
+          <input
+            className='form-control'
+            id='task_title'
+            placeholder='Enter task title...'
+            type='text'
+          />
+          <select id='formcontrolselect' className='form-control'>
+            <option>Select an option</option>
+            {this.props.categories.map((category, i: number) => {
+              return <option key={i}>{category.name}</option>;
+            })}
+          </select>
+          <Button className='btn btn-primary' type='submit'>
+            Add Task
+          </Button>
+        </Form>
+      </FormContainer>
     );
   }
 }
