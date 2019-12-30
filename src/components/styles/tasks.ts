@@ -5,6 +5,7 @@ export const TasksContainer = styled.div`
   color: #fff;
   ${oneMarginRem};
   width: 30%;
+  align-self: flex-start;
   background-color: #5486d9;
   border-top: 2px solid black;
   border-left: 2px solid black;
