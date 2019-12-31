@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../styles/media';
 
 export const fullWidth = `width: 100%`;
 export const oneMarginRem = `margin: 1rem`;
@@ -13,6 +14,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  ${media.smallVp`
+  flex-direction: column;
+  align-items: center;
+  `}
 `;
 
 export const FullWidthH2 = styled.h2`

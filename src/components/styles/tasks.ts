@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { oneMarginRem, onePaddingRem } from './base';
+import { media } from '../styles/media';
 
 export const TasksContainer = styled.div`
   color: #fff;
@@ -11,6 +12,7 @@ export const TasksContainer = styled.div`
   border-left: 2px solid black;
   border-right: 2px solid black;
   border-radius: 0.25rem;
+  ${media.mediumVp`width: 50%; align-self: center`}
 `;
 
 export const CategoryTitle = styled.h3`

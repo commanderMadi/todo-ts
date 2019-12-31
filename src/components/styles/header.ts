@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../styles/media';
 
 export const NavBar = styled.nav`
   width: 100%;
@@ -16,11 +17,12 @@ export const NavBar = styled.nav`
 
 export const NavList = styled.ul`
   display: flex;
-  width: 20%;
+  width: 90%;
+  justify-content: center;
   list-style-type: none;
-  justify-content: space-evenly;
   li {
     color: #fff;
+    margin: 0.5rem;
   }
   a:visited {
     color: #fff;
@@ -28,4 +30,5 @@ export const NavList = styled.ul`
   a:link {
     text-decoration: none;
   }
+  ${media.smallVp`justify-content: flex-end`}
 `;

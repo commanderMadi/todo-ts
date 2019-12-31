@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../styles/media';
 
 export const FormContainer = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ export const Form = styled.form`
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     'i i i i i i i sel sel sel'
-    '. . . . . . . . . b';
+    '. . . . . . .  b b';
   input {
     grid-area: i;
     height: 2rem;
@@ -27,8 +28,15 @@ export const Form = styled.form`
   button {
     margin: 0.5rem;
     grid-area: b;
-    display: inline-block;
+    width: 100px;
   }
+  ${media.smallVp`
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'i i i i i i i i i i'
+    'sel sel sel sel sel sel sel sel sel sel'
+    'b . . . . . . . . .';
+  `}
 `;
 
 export const LoginForm = styled.form`
@@ -42,7 +50,7 @@ export const LoginForm = styled.form`
   grid-template-areas:
     'label_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user .'
     'label_pw inp_pw  inp_pw  inp_pw  inp_pw  inp_pw  inp_pw inp_pw inp_pw inp_pw inp_pw . '
-    '. . . . . . . . . b b . ';
+    '. . . . . . . b b b b . ';
   label:nth-child(1) {
     grid-area: label_user;
     text-align: center;
@@ -66,4 +74,10 @@ export const LoginForm = styled.form`
     margin: 0.5rem;
     display: inline-block;
   }
+  ${media.smallVp`
+  grid-template-areas:
+    'label_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user .'
+    'label_pw inp_pw  inp_pw  inp_pw  inp_pw  inp_pw  inp_pw inp_pw inp_pw inp_pw inp_pw . '
+    'b b . . . . . . . . . . ';
+  `}
 `;
