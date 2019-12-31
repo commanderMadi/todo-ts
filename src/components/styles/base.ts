@@ -29,11 +29,19 @@ export const FullWidthH2 = styled.h2`
 export const Button = styled.button`
   ${onePaddingRem};
   color: #fff;
-  background-color: palevioletred;
+  background-color: yellowgreen;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1;
   border-radius: 0.25rem;
+  cursor: pointer;
+`;
+
+export const IconButton = styled.button`
+  color: #fff;
+  background-color: yellowgreen;
+  padding: 5px;
+  border: 1px solid transparent;
   cursor: pointer;
 `;

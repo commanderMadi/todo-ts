@@ -3,8 +3,13 @@ import { ReduxStoreState } from '../reducers/';
 import { connect } from 'react-redux';
 import { Task, Category, getCategories, deleteTask, addTask } from '../actions';
 import { AddTaskForm } from '../components/AddTaskForm';
-import { TasksContainer, TaskTitle, CategoryTitle } from './styles/tasks';
-import { Container, FullWidthH2, Button } from './styles/base';
+import {
+  TasksContainer,
+  TaskTitle,
+  CategoryTitle,
+  TaskContainer
+} from './styles/tasks';
+import { Container, FullWidthH2, IconButton } from './styles/base';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,15 +49,15 @@ export class Tasks extends React.Component<TasksProps> {
             {category.tasks.map((task: Task) => {
               return (
                 category && (
-                  <div key={task.id}>
+                  <TaskContainer key={task.id}>
                     <TaskTitle className='pr-4'>{task.title}</TaskTitle>
-                    <Button
+                    <IconButton
                       className='task_remove'
                       onClick={() => this.onDelete(task.id)}
                     >
                       <FontAwesomeIcon icon={faTrash} />
-                    </Button>
-                  </div>
+                    </IconButton>
+                  </TaskContainer>
                 )
               );
             })}

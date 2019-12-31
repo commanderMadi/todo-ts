@@ -12,9 +12,19 @@ export const TasksContainer = styled.div`
   border-left: 2px solid black;
   border-right: 2px solid black;
   border-radius: 0.25rem;
-  ${media.mediumVp`width: 50%; align-self: center`}
+  ${media.mediumVp`
+  width: 50%; 
+  align-self: center;`};
 `;
 
+export const TaskContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  button {
+    align-self: center;
+    margin-right: 0.5rem;
+  }
+`;
 export const CategoryTitle = styled.h3`
   background-color: #fff;
   width: 100%;
