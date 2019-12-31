@@ -43,25 +43,27 @@ export class Tasks extends React.Component<TasksProps> {
       this.props.categories &&
       this.props.categories.map((category: Category) => {
         return (
-          <TasksContainer id={category.name} key={category.name}>
-            <CategoryTitle>{category.name}</CategoryTitle>
+          category.tasks.length >= 1 && (
+            <TasksContainer id={category.name} key={category.name}>
+              <CategoryTitle>{category.name}</CategoryTitle>
 
-            {category.tasks.map((task: Task) => {
-              return (
-                category && (
-                  <TaskContainer key={task.id}>
-                    <TaskTitle className='pr-4'>{task.title}</TaskTitle>
-                    <IconButton
-                      className='task_remove'
-                      onClick={() => this.onDelete(task.id)}
-                    >
-                      <FontAwesomeIcon icon={faTrash} />
-                    </IconButton>
-                  </TaskContainer>
-                )
-              );
-            })}
-          </TasksContainer>
+              {category.tasks.map((task: Task) => {
+                return (
+                  category && (
+                    <TaskContainer key={task.id}>
+                      <TaskTitle className='pr-4'>{task.title}</TaskTitle>
+                      <IconButton
+                        className='task_remove'
+                        onClick={() => this.onDelete(task.id)}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </IconButton>
+                    </TaskContainer>
+                  )
+                );
+              })}
+            </TasksContainer>
+          )
         );
       })
     );
