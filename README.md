@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### A Note
+### Todo-Ts
 
-- Will add media queries to enhance responsiveness by tonight.
+A React Todo application written in Typescript.
 
-## Things finished
+### Things finished
 
 - Created all the necessary components.
 - Created all the actions and reducers for store management.
