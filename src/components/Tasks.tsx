@@ -43,11 +43,11 @@ export class Tasks extends React.Component<TasksProps> {
       this.props.categories &&
       this.props.categories.map((category: Category) => {
         return (
-          category.tasks.length >= 1 && (
-            <TasksContainer id={category.name} key={category.name}>
-              <CategoryTitle>{category.name}</CategoryTitle>
+          <TasksContainer id={category.name} key={category.name}>
+            <CategoryTitle>{category.name}</CategoryTitle>
 
-              {category.tasks.map((task: Task) => {
+            {category.tasks.length > 0 ? (
+              category.tasks.map((task: Task) => {
                 return (
                   category && (
                     <TaskContainer key={task.id}>
@@ -61,9 +61,11 @@ export class Tasks extends React.Component<TasksProps> {
                     </TaskContainer>
                   )
                 );
-              })}
-            </TasksContainer>
-          )
+              })
+            ) : (
+              <TaskTitle>No Tasks available</TaskTitle>
+            )}
+          </TasksContainer>
         );
       })
     );
