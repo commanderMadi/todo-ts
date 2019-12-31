@@ -13,7 +13,7 @@ export const Form = styled.form`
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     'i i i i i i i sel sel sel'
-    '. . . . . . .  b b';
+    '. . . . . . . . . b';
   input {
     grid-area: i;
     height: 2rem;
@@ -26,6 +26,7 @@ export const Form = styled.form`
     margin-right: 0.5rem;
   }
   button {
+    justify-self: flex-end;
     margin: 0.5rem;
     grid-area: b;
     width: 100px;
@@ -35,7 +36,7 @@ export const Form = styled.form`
   grid-template-areas:
     'i i i i i i i i i i'
     'sel sel sel sel sel sel sel sel sel sel'
-    'b . . . . . . . . .';
+    '. . . . . . . . . b';
   `}
 `;
 
@@ -50,7 +51,7 @@ export const LoginForm = styled.form`
   grid-template-areas:
     'label_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user inp_user .'
     'label_pw inp_pw  inp_pw  inp_pw  inp_pw  inp_pw  inp_pw inp_pw inp_pw inp_pw inp_pw . '
-    '. . . . . . . b b b b . ';
+    '. . . . . . . . b b b . ';
   label:nth-child(1) {
     grid-area: label_user;
     text-align: center;
