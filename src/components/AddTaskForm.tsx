@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEventHandler, FormHTMLAttributes } from 'react';
 import { Task, Category } from '../actions';
 import uuid from 'uuid';
 import { FormContainer, Form } from './styles/forms';
@@ -22,10 +22,11 @@ export class AddTaskForm extends React.Component<AddTaskFormProps> {
     error: null
   };
 
-  onSubmit(e: any) {
+  onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    let title = e.target.elements[0].value;
-    let categoryTitle = e.target.elements[1].value;
+    const target = e.target as HTMLFormElement;
+    let title = (target.elements[0] as HTMLFormElement).value;
+    let categoryTitle = (target.elements[1] as HTMLFormElement).value;
     let id = uuid();
     if (title && categoryTitle !== 'Select an option') {
       this.setState(
@@ -39,8 +40,8 @@ export class AddTaskForm extends React.Component<AddTaskFormProps> {
         },
         () => this.props.onSubmit(this.state)
       );
-      e.target.elements[0].value = '';
-      e.target.elements[1].value = 'Select an option';
+      (target.elements[0] as HTMLFormElement).value = '';
+      (target.elements[1] as HTMLFormElement).value = 'Select an option';
     } else if (
       !title ||
       !categoryTitle ||
